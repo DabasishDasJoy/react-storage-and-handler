@@ -1,11 +1,17 @@
 import React from 'react';
+import { addToLocalStorage } from '../../utilities/fakedb/fakedb';
 import "./Cosmetic.css";
 
 const Cosmetic = (props) => {
     const {id, name, price} = props.cosmetic;
     // Cart handler
     const addToCart = (id) =>{
-        console.log("Items clicked", id);
+        /* 
+            To add item to cart we need to access a database. For that we can create a database or fakedb by accessing localStorage. 
+        */
+
+        //Declare a function that addes item to local storage in the uitlities. 
+        addToLocalStorage(id);
     }
     return (
         <div className='product'>
