@@ -1,5 +1,5 @@
 import React from 'react';
-import { addToLocalStorage } from '../../utilities/fakedb/fakedb';
+import { addToLocalStorage, removeFromLocalStorage } from '../../utilities/fakedb/fakedb';
 import "./Cosmetic.css";
 
 const Cosmetic = (props) => {
@@ -13,6 +13,9 @@ const Cosmetic = (props) => {
         //Declare a function that addes item to local storage in the uitlities. 
         addToLocalStorage(id);
     }
+    const removeFromCart = (id) =>{
+        removeFromLocalStorage(id);
+    };
     return (
         <div className='product'>
             <p>Id: {id}</p>
@@ -32,6 +35,7 @@ const Cosmetic = (props) => {
                 button -> onClick = {addTocartWithOutParams}
             */}
             <button onClick={() => addToCart(id)}>Add to cart</button>
+            <button onClick={() => removeFromCart(id)}>Remove from cart</button>
         </div>
     );
 };
