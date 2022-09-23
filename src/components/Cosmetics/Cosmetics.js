@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { totalPrice } from '../../utilities/fakedb/fakedb';
 import Cosmetic from '../Cosmetic/Cosmetic';
 /* -> This is default import
 import addition from '../../utilities/Calculation/Calculation';
@@ -21,10 +22,12 @@ const Cosmetics = (props) => {
             .then(res => res.json())
             .then(data => setCosmetics(data))
     }, []);
-    
+    const total = totalPrice(cosmetics);
+
     return (
         <div>
             <h1>Hello From Cosmetics</h1>
+            <h2>Total Price: {total}</h2>
             {
                 cosmetics.map(cosmetic => <Cosmetic 
                     cosmetic={cosmetic} 

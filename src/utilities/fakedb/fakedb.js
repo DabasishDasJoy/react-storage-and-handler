@@ -59,9 +59,15 @@ const removeFromLocalStorage = (id) => {
         }
     }
 }
+
+const getTotalPrice = products =>{
+    const total = products.reduce((pre, curr) => pre + curr.price, 0);
+    return total;
+}
 export {
     addToLocalStorage,
     addToLocalStorageDirect,
-    removeFromLocalStorage
+    removeFromLocalStorage,
+    getTotalPrice as totalPrice
 };
 

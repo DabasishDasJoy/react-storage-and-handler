@@ -40,4 +40,5 @@ const Cosmetic = (props) => {
     );
 };
 
+
 export default Cosmetic;
